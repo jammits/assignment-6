@@ -31,31 +31,28 @@ public class ReportService {
         modelSStat = sortingByYear(modelsFromFile);
         modelXStat = sortingByYear(modelxFromFile);
 
-        System.out.println("\nModel 3 Yearly Report\n----------------");
-        model3Stat.entrySet()
-                .stream()
-                .forEach(year -> System.out.println(year.getKey() + "->" + year.getValue()));
-
+        //Model 3
+        modelSales(model3Stat,file1);
         saleStats(model3FromFile);
 
-        System.out.println("\nModel S Yearly Report\n----------------");
-        modelSStat.entrySet()
-                .stream()
-                .forEach(year -> System.out.println(year.getKey() + "->" + year.getValue()));
-
+        //Model S
+        modelSales(modelSStat,file2);
         saleStats(modelsFromFile);
 
-        System.out.println("\nModel X Yearly Report\n----------------");
-        modelXStat.entrySet()
-                .stream()
-                .forEach(year -> System.out.println(year.getKey() + "->" + year.getValue()));
-
+        //Model X
+        modelSales(modelXStat,file3);
         saleStats(modelxFromFile);
 
 
 
     }
 
+    public static void modelSales(Map<Integer,Integer> model, String file) {
+        System.out.println("\n"+ file.substring(0,6).toUpperCase() + " Yearly Report\n----------------------");
+        model.entrySet()
+                .stream()
+                .forEach(year -> System.out.println(year.getKey() + "->" + year.getValue()));
+    }
     private static Map<Integer,Integer> sortingByYear(List<TeslaCar> modelFile){
 
         //Sorting by year and creating list of sales in that year
