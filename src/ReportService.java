@@ -17,9 +17,6 @@ public class ReportService {
     private static Map<Integer,Integer> modelSStat;
     private static Map<Integer,Integer> modelXStat;
 
-    public ReportService() {
-        yearlySale();
-    }
 
     //printing of the yearly sales report
     public static void yearlySale() {
