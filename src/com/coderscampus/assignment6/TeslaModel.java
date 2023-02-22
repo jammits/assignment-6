@@ -1,4 +1,4 @@
-package src;
+package com.coderscampus.assignment6;
 
 public enum TeslaModel {
     MODEL3("model3"),

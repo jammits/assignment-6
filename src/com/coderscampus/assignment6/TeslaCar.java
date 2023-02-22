@@ -1,4 +1,4 @@
-package src;
+package com.coderscampus.assignment6;
 
 
 import java.time.YearMonth;
